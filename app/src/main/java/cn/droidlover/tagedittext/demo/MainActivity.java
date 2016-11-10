@@ -3,8 +3,10 @@ package cn.droidlover.tagedittext.demo;
 import android.graphics.Color;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
+import android.widget.Toast;
 
 import cn.droidlover.tagedittext.TagEditText;
+import cn.droidlover.tagedittext.TagSpan;
 import cn.droidlover.tagedittext.TagTextView;
 
 public class MainActivity extends AppCompatActivity {
@@ -23,10 +25,30 @@ public class MainActivity extends AppCompatActivity {
         tv_tag = (TagTextView) findViewById(R.id.tv_tag);
         et_tag = (TagEditText) findViewById(R.id.et_tag);
 
-        tv_tag.tagColor(Color.RED).text(str);
+        tv_tag
+                .tagColor(Color.RED)        //设置标签颜色
+                .tag("#", "#");     //设置前后匹配符
 
-//        et_tag.appendText("");
-//        et_tag.getTagList();
-//        et_tag.removeText("");
+        tv_tag.setCallback(new TagSpan.Callback<String>() {     //设置标签点击事件
+            @Override
+            public void onClick(String data) {
+                toast(data);
+            }
+        });
+
+        tv_tag.text(str);           //设置内容
+
+
+//        et_tag
+//                .tag("#", "#")     //设置前后匹配符
+//                .tagColor(Color.BLUE);  //设置标签颜色
+//        et_tag.appendText("");      //追加文本
+//        et_tag.getTagList();        //获取标签集合
+//        et_tag.removeText("");      //删除指定
+    }
+
+
+    private void toast(String msg) {
+        Toast.makeText(this, msg, Toast.LENGTH_SHORT).show();
     }
 }
