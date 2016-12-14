@@ -5,6 +5,7 @@ import android.content.Context;
 import android.text.SpannableString;
 import android.text.SpannableStringBuilder;
 import android.text.TextUtils;
+import android.text.method.LinkMovementMethod;
 import android.util.AttributeSet;
 import android.widget.TextView;
 
@@ -75,6 +76,7 @@ public class TagTextView extends TextView {
         }
 
         setText(builder);
+        setMovementMethod(LinkMovementMethod.getInstance());
     }
 
 
