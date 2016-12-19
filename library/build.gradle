@@ -1,4 +1,5 @@
 apply plugin: 'com.android.library'
+apply plugin: 'com.novoda.bintray-release'//添加
 
 android {
     compileSdkVersion 23
@@ -20,4 +21,13 @@ android {
 
 dependencies {
     compile fileTree(dir: 'libs', include: ['*.jar'])
+}
+
+publish {
+    userOrg = 'qhkxg'//bintray.com用户名
+    groupId = 'cn.droidlover'//jcenter上的路径
+    artifactId = 'TagEditText'//项目名称
+    publishVersion = '1.0.0'//版本号
+    desc = 'EditText&TextView with colorful tag.'//描述，不重要
+    website = 'https://github.com/limedroid/TagEditText.git'//网站，不重要；尽量模拟github上的地址，例如我这样的；当然你有地址最好了
 }

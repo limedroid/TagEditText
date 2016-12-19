@@ -3,6 +3,7 @@ package cn.droidlover.tagedittext.demo;
 import android.graphics.Color;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
+import android.view.View;
 import android.widget.Toast;
 
 import cn.droidlover.tagedittext.TagEditText;
@@ -35,8 +36,7 @@ public class MainActivity extends AppCompatActivity {
                 toast(data);
             }
         });
-
-        tv_tag.text(str);           //设置内容
+        tv_tag.text(str);
 
 
 //        et_tag
@@ -47,6 +47,10 @@ public class MainActivity extends AppCompatActivity {
 //        et_tag.removeText("");      //删除指定
     }
 
+
+    public void doNext(View view) {
+        NextActivity.lauch(this);
+    }
 
     private void toast(String msg) {
         Toast.makeText(this, msg, Toast.LENGTH_SHORT).show();

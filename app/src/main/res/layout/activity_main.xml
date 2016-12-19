@@ -16,11 +16,18 @@
     <cn.droidlover.tagedittext.TagEditText
         android:id="@+id/et_tag"
         android:layout_width="match_parent"
-        android:hint="TagEditText"
         android:layout_height="wrap_content"
         android:layout_marginTop="50dp"
         android:background="@android:color/transparent"
+        android:hint="TagEditText"
         android:padding="16dp"
         android:textSize="14sp" />
+
+    <Button
+        android:layout_width="match_parent"
+        android:layout_height="45dp"
+        android:layout_marginTop="20dp"
+        android:onClick="doNext"
+        android:text="next" />
 
 </LinearLayout>
